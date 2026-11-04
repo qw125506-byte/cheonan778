@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f8fc" />
+  <meta name="description" content="천안시청에서 청년정책을 담당하는 20년 차 공무원의 개인 포트폴리오" />
+  <title>Portfolio | 정책에 감각을 더하다</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#20233b;--sub:#697084;--muted:#8a90a1;--line:#e7e9f1;--violet:#7162d8;--deep:#5b4fc3;--mint:#c9f1dc;--paper:#f7f8fc; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:'DM Sans','Noto Sans KR',sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible { outline:3px solid #8879ed; outline-offset:5px; }
+    .shell { width:min(1170px,calc(100% - 80px)); margin:0 auto; }
+    header { position:relative; z-index:10; }
+    .nav { height:100px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; gap:11px; font-size:20px; font-weight:800; letter-spacing:-.9px; }
+    .brand-symbol { width:30px; height:30px; border-radius:10px; background:var(--violet); color:white; display:grid; place-items:center; font-size:19px; font-weight:800; transform:rotate(-9deg); }
+    .brand-symbol span { transform:rotate(9deg); }
+    .nav-links { display:flex; align-items:center; gap:35px; font-size:13px; font-weight:700; }
+    .nav-links a { transition:color .2s; }
+    .nav-links a:hover { color:var(--violet); }
+    .nav-links .contact-nav { padding:12px 19px; border:1px solid #d8daeb; border-radius:999px; }
+    .nav-links .contact-nav:hover { border-color:var(--violet); }
+    .hero { min-height:620px; display:grid; grid-template-columns:1.06fr .94fr; align-items:center; gap:40px; padding:30px 0 92px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:800; color:var(--deep); letter-spacing:1.6px; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:25px; height:2px; border-radius:2px; background:var(--violet); }
+    h1,h2,h3,p { margin-top:0; }
+    .hero h1 { margin:27px 0 24px; font-size:clamp(43px,4.8vw,69px); line-height:1.33; letter-spacing:-4.4px; font-weight:800; word-break:keep-all; }
+    .hero h1 .accent { color:var(--violet); }
+    .hero-desc { max-width:470px; color:var(--sub); font-size:16px; line-height:2.05; word-break:keep-all; }
+    .hero-actions { display:flex; align-items:center; gap:13px; flex-wrap:wrap; margin-top:37px; }
+    .btn { display:inline-flex; justify-content:center; align-items:center; gap:12px; min-height:52px; padding:0 23px; border-radius:13px; font-weight:800; font-size:13px; transition:transform .18s,background .18s,box-shadow .18s; }
+    .btn:hover { transform:translateY(-3px); }
+    .btn:active { transform:translateY(0) scale(.97); }
+    .btn-primary { background:var(--violet); color:white; box-shadow:0 10px 25px #7162d82f; }
+    .btn-primary:hover { background:var(--deep); box-shadow:0 14px 28px #7162d842; }
+    .btn-secondary { background:white; border:1px solid var(--line); }
+    .btn-secondary:hover { background:#f1efff; }
+    .hero-art { min-height:475px; position:relative; display:flex; align-items:center; justify-content:center; isolation:isolate; }
+    .art-disc { position:absolute; width:min(425px,96%); aspect-ratio:1; border-radius:50%; background:linear-gradient(145deg,#e6e0ff 0%,#cfd4ff 52%,#c8f1e1 100%); box-shadow:inset -34px -30px 60px #adb7ed35; }
+    .art-orbit { width:350px; height:350px; border:1px solid #ffffffb0; border-radius:50%; position:absolute; transform:rotate(-24deg) scaleX(1.25); }
+    .art-card { position:relative; width:270px; height:330px; padding:28px 26px; background:rgba(255,255,255,.87); border:1px solid rgba(255,255,255,.95); border-radius:27px; box-shadow:0 33px 75px #5045a53d; backdrop-filter:blur(12px); transform:rotate(-8deg); display:flex; flex-direction:column; justify-content:space-between; }
+    .art-card-top { display:flex; justify-content:space-between; align-items:center; font-size:12px; font-weight:800; letter-spacing:1px; }
+    .mini-spark { width:40px; height:40px; background:#efeaff; border-radius:13px; color:var(--violet); display:grid; place-items:center; font-size:24px; }
+    .art-type { font-family:'Manrope',sans-serif; font-size:70px; font-weight:800; line-height:1.04; letter-spacing:-7px; }
+    .art-type small { display:block; margin-top:15px; font-family:'Noto Sans KR',sans-serif; font-size:15px; line-height:1.5; font-weight:700; letter-spacing:-1px; }
+    .art-card-bottom { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:11px; font-weight:700; }
+    .art-card-bottom span:last-child { color:var(--violet); font-size:23px; }
+    .float-label { position:absolute; z-index:2; padding:15px 18px; background:white; border-radius:15px; box-shadow:0 16px 35px #4a4d8b22; font-size:12px; font-weight:800; }
+    .float-label.top { top:67px; right:0; transform:rotate(8deg); }
+    .float-label.bottom { bottom:69px; left:-2px; transform:rotate(7deg); }
+    .float-label .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:7px; background:#64c9a0; }
+    .asterisk { position:absolute; z-index:1; top:18px; left:30px; font-size:73px; font-weight:300; line-height:1; color:var(--violet); }
+    .section { padding:76px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:25px; margin-bottom:28px; }
+    .section-kicker { display:block; color:var(--violet); font-size:12px; font-weight:800; letter-spacing:1.4px; margin-bottom:13px; }
+    .section h2 { font-size:clamp(26px,3vw,37px); line-height:1.45; margin:0; letter-spacing:-1.8px; }
+    .section-note { max-width:355px; color:var(--sub); font-size:13px; line-height:1.8; margin:0; word-break:keep-all; }
+    .about-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .info-card { background:white; border:1px solid var(--line); border-radius:22px; padding:29px 28px 30px; min-height:210px; transition:transform .2s,box-shadow .2s; }
+    .info-card:hover { transform:translateY(-5px); box-shadow:0 17px 40px #5d5d8a12; }
+    .info-icon { width:43px; height:43px; border-radius:13px; display:grid; place-items:center; font-size:20px; margin-bottom:24px; }
+    .info-card:nth-child(1) .info-icon { background:#ede9ff; }
+    .info-card:nth-child(2) .info-icon { background:#e6f8ef; }
+    .info-card:nth-child(3) .info-icon { background:#fff2e6; }
+    .info-card h3 { margin:0 0 10px; font-size:18px; letter-spacing:-.8px; }
+    .info-card p { color:var(--sub); font-size:13px; line-height:1.85; margin:0; word-break:keep-all; }
+    .work { padding-top:71px; padding-bottom:100px; }
+    .project-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .project { display:flex; flex-direction:column; overflow:hidden; background:white; border:1px solid var(--line); border-radius:23px; transition:transform .2s,box-shadow .2s,border-color .2s; }
+    .project:hover { transform:translateY(-7px); border-color:#c9c3ef; box-shadow:0 20px 45px #5d5d8a18; }
+    .project:active { transform:translateY(-2px) scale(.99); }
+    .project-cover { min-height:195px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .project:nth-child(1) .project-cover { background:#e9e4ff; }
+    .project:nth-child(2) .project-cover { background:#dbf2e7; }
+    .project:nth-child(3) .project-cover { background:#fce9dc; }
+    .project-number { position:relative; z-index:2; font:800 116px/1 'Manrope',sans-serif; letter-spacing:-12px; }
+    .project:nth-child(1) .project-number { color:#8d80e7; }
+    .project:nth-child(2) .project-number { color:#78c8a3; }
+    .project:nth-child(3) .project-number { color:#e6a984; }
+    .cover-shape { position:absolute; width:180px; height:180px; border:2px solid #ffffff90; border-radius:45px; transform:rotate(27deg); right:-43px; top:-62px; }
+    .cover-shape.two { width:122px; height:122px; left:-32px; bottom:-70px; top:auto; border-radius:50%; }
+    .project-content { flex:1; padding:23px 25px 25px; display:flex; flex-direction:column; }
+    .project-tag { font-size:10px; color:var(--violet); font-weight:800; letter-spacing:1.3px; }
+    .project h3 { font-size:19px; margin:10px 0 8px; letter-spacing:-.7px; }
+    .project p { font-size:13px; line-height:1.75; color:var(--sub); margin-bottom:20px; }
+    .project-link { margin-top:auto; padding-top:13px; border-top:1px solid var(--line); font-size:12px; font-weight:800; display:flex; justify-content:space-between; align-items:center; }
+    .arrow { width:29px; height:29px; border-radius:50%; background:#f0edff; color:var(--violet); display:grid; place-items:center; font-size:17px; transition:transform .2s,background .2s; }
+    .project:hover .arrow { transform:translateX(3px); background:#ded7ff; }
+    .closing { background:#252342; color:white; border-radius:27px; padding:48px 55px; display:flex; justify-content:space-between; align-items:center; gap:30px; overflow:hidden; position:relative; }
+    .closing:after { content:"✳"; position:absolute; font-size:250px; right:170px; top:-120px; color:#ffffff0a; pointer-events:none; }
+    .closing .section-kicker { color:#b9afff; }
+    .closing h2 { position:relative; z-index:1; font-size:27px; line-height:1.6; letter-spacing:-1.3px; margin:0; }
+    .closing p { position:relative; z-index:1; margin:12px 0 0; font-size:13px; color:#c8c6dc; line-height:1.9; }
+    .closing .btn { position:relative; z-index:1; white-space:nowrap; background:white; color:#302b5a; }
+    footer { padding:34px 0 40px; display:flex; justify-content:space-between; gap:18px; color:#8a8e9b; font-size:12px; }
+    footer strong { color:#5b5b73; }
+    @media (max-width:850px) { .shell { width:min(100% - 44px,660px); } .nav { height:80px; } .nav-links { gap:19px; } .hero { grid-template-columns:1fr; gap:12px; padding:34px 0 55px; } .hero h1 { letter-spacing:-2.8px; } .hero-art { min-height:410px; max-width:500px; width:100%; margin:auto; } .art-disc { width:365px; max-width:92%; } .section { padding:55px 0; } .about-grid { grid-template-columns:1fr; gap:12px; } .info-card { min-height:auto; } .project-grid { gap:12px; } .project-cover { min-height:155px; } .project-number { font-size:90px; } .project-content { padding:19px; } .project h3 { font-size:17px; } .closing { padding:36px; } }
+    @media (max-width:600px) { .shell { width:calc(100% - 36px); } .brand { font-size:17px; } .nav-links a:not(.contact-nav) { display:none; } .nav-links .contact-nav { padding:10px 14px; } .hero { padding-top:27px; } .hero h1 { font-size:42px; letter-spacing:-2.5px; margin:20px 0; } .hero-desc { font-size:14px; line-height:1.9; } .hero-actions { margin-top:27px; } .hero-art { min-height:355px; } .art-disc { width:300px; } .art-orbit { width:270px; height:270px; } .art-card { width:210px; height:264px; padding:21px; border-radius:23px; } .art-type { font-size:52px; letter-spacing:-5px; } .art-type small { font-size:12px; } .art-card-top { font-size:10px; } .float-label { padding:11px 13px; font-size:10px; } .float-label.top { right:0; top:45px; } .float-label.bottom { bottom:38px; left:0; } .asterisk { left:8px; top:9px; font-size:53px; } .section-head { display:block; } .section-note { margin-top:12px; } .section h2 { font-size:28px; } .project-grid { grid-template-columns:1fr; gap:16px; } .project-cover { min-height:185px; } .project-number { font-size:115px; } .closing { display:block; padding:32px 27px; } .closing h2 { font-size:23px; } .closing .btn { margin-top:25px; } footer { flex-direction:column; gap:6px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { transition-duration:.01ms!important; animation-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="shell nav" aria-label="주요 메뉴">
+      <a class="brand" href="#home" aria-label="포트폴리오 처음으로"><span class="brand-symbol"><span>✳</span></span> 영미 포토 폴리오<span style="color:var(--violet)">.</span></a>
+      <div class="nav-links"><a href="#about">ABOUT</a><a href="#projects">PROJECTS</a><a class="contact-nav" href="#connect">LET'S CONNECT ↗</a></div>
+    </nav>
+  </header>
+  <main>
+    <section class="shell hero" id="home">
+      <div>
+        <span class="eyebrow">PUBLIC SERVICE × CREATIVE MIND</span>
+        <h1>정책에 진심을,<br /><span class="accent">일상에 디자인을.</span></h1>
+        <p class="hero-desc">안녕하세요. 천안시청에서 청년정책을 담당하고 있는 20년 차 공무원입니다. 사람을 위한 정책을 고민하고, 보기 좋은 디자인에서 새로운 영감을 얻습니다.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#projects">포트폴리오 둘러보기 <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="#about">저를 소개합니다 <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="hero-art" aria-label="크리에이티브 포트폴리오 일러스트레이션" role="img">
+        <div class="art-disc"></div><div class="art-orbit"></div><span class="asterisk" aria-hidden="true">✳</span>
+        <div class="art-card"><div class="art-card-top"><span>CREATIVE PUBLIC SERVANT</span><span class="mini-spark">✳</span></div><div class="art-type">20<span style="color:var(--violet)">+</span><small>경험 위에 감각을 더하다</small></div><div class="art-card-bottom"><span>CHEONAN · YOUTH POLICY</span><span>↗</span></div></div>
+        <div class="float-label top"><span class="dot"></span> Youth Policy</div><div class="float-label bottom">✦ Design Lover</div>
+      </div>
+    </section>
+    <section class="shell section" id="about">
+      <div class="section-head"><div><span class="section-kicker">01 / ABOUT ME</span><h2>경험은 깊게, 시선은 새롭게.</h2></div><p class="section-note">오랜 공직 경험과 새로운 것을 향한 호기심을 바탕으로, 더 나은 일상과 가능성을 고민합니다.</p></div>
+      <div class="about-grid">
+        <article class="info-card"><div class="info-icon" aria-hidden="true">🏛️</div><h3>20년의 공직 경험</h3><p>현장에서 쌓아온 경험을 바탕으로 공공의 가치를 생각하며 일합니다.</p></article>
+        <article class="info-card"><div class="info-icon" aria-hidden="true">🌱</div><h3>청년의 가능성</h3><p>천안시청에서 청년정책을 담당하며 청년의 오늘과 내일을 고민합니다.</p></article>
+        <article class="info-card"><div class="info-icon" aria-hidden="true">🎨</div><h3>디자인을 향한 애정</h3><p>깔끔한 구성, 아름다운 색감, 작은 디테일이 주는 즐거움을 좋아합니다.</p></article>
+      </div>
+    </section>
+    <section class="shell section work" id="projects">
+      <div class="section-head"><div><span class="section-kicker">02 / EXPLORE MORE</span><h2>작은 아이디어가 모이는 곳.</h2></div><p class="section-note">앞으로 채워갈 이야기와 작업 공간입니다. 각 카드를 누르면 연결된 페이지로 이동합니다.</p></div>
+      <div class="project-grid">
+        <a class="project" href="1.html" aria-label="프로젝트 1 페이지로 이동"><div class="project-cover"><div class="cover-shape"></div><div class="cover-shape two"></div><span class="project-number">01</span></div><div class="project-content"><span class="project-tag">PAGE 01</span><h3>첫 번째 이야기</h3><p>나만의 프로젝트와 아이디어를 담을 공간</p><span class="project-link">1.html 바로가기 <span class="arrow" aria-hidden="true">↗</span></span></div></a>
+        <a class="project" href="2.html" aria-label="프로젝트 2 페이지로 이동"><div class="project-cover"><div class="cover-shape"></div><div class="cover-shape two"></div><span class="project-number">02</span></div><div class="project-content"><span class="project-tag">PAGE 02</span><h3>두 번째 이야기</h3><p>새로운 시도와 영감을 기록할 공간</p><span class="project-link">2.html 바로가기 <span class="arrow" aria-hidden="true">↗</span></span></div></a>
+        <a class="project" href="3.html" aria-label="프로젝트 3 페이지로 이동"><div class="project-cover"><div class="cover-shape"></div><div class="cover-shape two"></div><span class="project-number">03</span></div><div class="project-content"><span class="project-tag">PAGE 03</span><h3>세 번째 이야기</h3><p>앞으로 만들어갈 결과물을 소개할 공간</p><span class="project-link">3.html 바로가기 <span class="arrow" aria-hidden="true">↗</span></span></div></a>
+      </div>
+    </section>
+    <section class="shell" id="connect"><div class="closing"><div><span class="section-kicker">03 / MY PHILOSOPHY</span><h2>사람을 생각하는 마음과<br />아름다움을 발견하는 시선.</h2><p>공직의 경험과 디자인에 대한 애정을 함께 키워갑니다.</p></div><a class="btn" href="#home">처음으로 돌아가기 ↑</a></div></section>
+  </main>
+  <footer class="shell"><span><strong>MY PORTFOLIO.</strong> &nbsp; Made with purpose & creativity.</span><span>Cheonan City Hall · Youth Policy · © <span id="year">2026</span></span></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
